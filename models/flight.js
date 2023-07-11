@@ -20,7 +20,7 @@ const flightSchema = new Schema({
         min: 10,
         max: 9999
     },
-    departs: {
+    departs: { 
         type: Date,
         default: function(){
             const oneYearFromNow = new Date();
@@ -28,9 +28,18 @@ const flightSchema = new Schema({
             return oneYearFromNow;
         }
     },
-    destinations: [destinationsSchema]
+    destination: [destinationSchema]
 }, {
     timestamps: true
 });
+
+const destinationSchema = new mongoose.Schema({
+    airport: {
+        type: String,
+        enum: ['DFW', 'DEN', 'LAX', 'SAN'],
+        required: true
+    }
+});
+
 
 module.exports = mongoose.model('Flight', flightSchema);
