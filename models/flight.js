@@ -33,7 +33,7 @@ const flightSchema = new Schema({
     timestamps: true
 });
 
-const destinationSchema = new mongoose.Schema({
+const destinationSchema = new Schema({
     airport: {
         type: String,
         enum: ['DFW', 'DEN', 'LAX', 'SAN'],
