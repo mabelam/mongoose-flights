@@ -4,7 +4,8 @@ module.exports = {
     new: newFlight,
     index,
     create, 
-    show
+    show,
+    createDestination, 
 };
 
 async function show(req,res){
